@@ -57,7 +57,40 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: Text("Accueil", style: TextStyle(fontSize: 18),),
             leading: Icon(Icons.home_filled, color: Colors.red),
-          )
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+           ListTile(
+            title: Text("Informations", style: TextStyle(fontSize: 18),),
+            leading: Icon(Icons.info_rounded, color: Colors.red),
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+           ListTile(
+            title: Text("Gallery", style: TextStyle(fontSize: 18),),
+            leading: Icon(Icons.image_rounded, color: Colors.red),
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+           ListTile(
+            title: Text("Compteur", style: TextStyle(fontSize: 18),),
+            leading: Icon(Icons.plus_one, color: Colors.red),
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+          ListTile(
+            title: Text("A propos", style: TextStyle(fontSize: 18),),
+            leading: Icon(Icons.accessibility_outlined, color: Colors.red),
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+          ListTile(
+            title: Text("Paramétres", style: TextStyle(fontSize: 18),),
+            leading: Icon(Icons.settings, color: Colors.red),
+            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+            onTap: (){},
+          ),
+          // Divider(height: 1, color: Colors.deepOrange,)
         ],
       ),
     );
