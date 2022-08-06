@@ -1,16 +1,20 @@
-# basic_app_flutter
+# **BASIC APP**
 
-A new Flutter project.
+![Logo Flutter](images/logo.png)
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+> ##  **Composants de l'application**
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. ### Pages(Accueil, Infos, Gallery, Compteur, A propos et Parametres)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. ### Navigation
+
+3. ### Drawer
+
+<br>
+
+![Tous les pages](images/captures/pages.png)
+
