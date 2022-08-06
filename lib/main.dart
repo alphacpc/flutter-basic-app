@@ -1,4 +1,10 @@
+import 'package:basic_app_flutter/ui/pages/about.page.dart';
+import 'package:basic_app_flutter/ui/pages/counter.page.dart';
+import 'package:basic_app_flutter/ui/pages/gallery.page.dart';
+import 'package:basic_app_flutter/ui/pages/informations.page.dart';
+import 'package:basic_app_flutter/ui/pages/setting.page.dart';
 import 'package:flutter/material.dart';
+import 'package:basic_app_flutter/ui/pages/home.page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,89 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        "/home" : (context) => HomeScreen(),
+        "/informations" : (context) => InfoScreen(),
+        "/gallery" : (context) => GalleryScreen(),
+        "/counter" : (context) => CounterScreen(),
+        "/about" : (context) => AboutScreen(),
+        "/setting" : (context) => settingScreen(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.red
       ),
-      home: HomeScreen(),
-    );
-  }
-}
-
-// HOME SCREEN
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: MyDrawer(),
-      appBar: AppBar(title: Text("Hello Flutter")),
-      body: Center(
-        child: Text("Home Page", style: TextStyle(
-          fontSize: 24
-        ),)
-      )
+      initialRoute: "/home",
     );
   }
 }
 
 
-// DRAWER SCREEN
-class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          DrawerHeader(
-            child: Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('images/me.jpeg'),
-                radius: 60,
-              )
-            ),
-          ),
-          ListTile(
-            title: Text("Accueil", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.home_filled, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-           ListTile(
-            title: Text("Informations", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.info_rounded, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-           ListTile(
-            title: Text("Gallery", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.image_rounded, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-           ListTile(
-            title: Text("Compteur", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.plus_one, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-          ListTile(
-            title: Text("A propos", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.accessibility_outlined, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-          ListTile(
-            title: Text("Paramétres", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.settings, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){},
-          ),
-          // Divider(height: 1, color: Colors.deepOrange,)
-        ],
-      ),
-    );
-  }
-}
