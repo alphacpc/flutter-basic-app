@@ -1,3 +1,4 @@
+import 'package:basic_app_flutter/config/global.params.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,63 +17,20 @@ class MyDrawer extends StatelessWidget {
                 backgroundImage: AssetImage('images/me.jpeg'),
                 radius: 60,
               )
-            ),
+            ), 
           ),
-          ListTile(
-            title: Text("Accueil", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.home_filled, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/home");
-            },
-          ),
-           ListTile(
-            title: Text("Informations", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.info_rounded, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/informations");
-            },
-          ),
-           ListTile(
-            title: Text("Gallery", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.image_rounded, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/gallery");
-            },
-          ),
-           ListTile(
-            title: Text("Compteur", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.plus_one, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/counter");
-            },
-          ),
-          ListTile(
-            title: Text("A propos", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.accessibility_outlined, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/about");
-            },
-          ),
-          ListTile(
-            title: Text("Paramétres", style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.settings, color: Colors.red),
-            trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
-            onTap: (){
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, "/setting");
-            },
-          ),
-          // Divider(height: 1, color: Colors.deepOrange,)
+          
+          ...GlobalParams.menus.map((item){
+            return ListTile(
+              title: Text("${item['title']}", style: TextStyle(fontSize: 18),),
+              leading: item['icon'],
+              trailing: Icon(Icons.keyboard_arrow_right_rounded, color: Colors.red,),
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, "${item['route']}");
+              },
+            );
+          })
         ],
       ),
     );

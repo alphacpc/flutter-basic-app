@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
+
+// IMPORT SCREENs
 import 'package:basic_app_flutter/ui/pages/about.page.dart';
 import 'package:basic_app_flutter/ui/pages/counter.page.dart';
 import 'package:basic_app_flutter/ui/pages/gallery.page.dart';
 import 'package:basic_app_flutter/ui/pages/informations.page.dart';
 import 'package:basic_app_flutter/ui/pages/setting.page.dart';
-import 'package:flutter/material.dart';
 import 'package:basic_app_flutter/ui/pages/home.page.dart';
 
 void main() => runApp(MyApp());
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red
       ),
       initialRoute: "/home",
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false ,
     );
   }
 }
