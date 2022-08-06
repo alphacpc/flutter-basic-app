@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red
       ),
       initialRoute: "/home",
+      debugShowCheckedModeBanner: false,
     );
   }
 }
